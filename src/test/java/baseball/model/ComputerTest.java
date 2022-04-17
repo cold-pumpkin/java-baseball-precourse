@@ -45,4 +45,15 @@ class ComputerTest {
                 .isEqualTo(2);
     }
 
+    @DisplayName("스트라이크 카운트 기능을 확인한다.")
+    @Test
+    void countStrikesTest() {
+        List<Integer> playNumbers = Arrays.asList(6, 4, 1);
+        List<Integer> answerNumbers = Arrays.asList(1, 4, 6);
+        Computer computer = new Computer(answerNumbers);
+
+        assertThat(computer.countStrikes(playNumbers))
+                .isEqualTo(1);
+    }
+
 }
