@@ -2,8 +2,7 @@ package baseball.model;
 
 import org.junit.jupiter.api.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -33,6 +32,17 @@ class ComputerTest {
         Set<Integer> answerSet = new HashSet<>(computer.getAnswerNumbers());
         assertThat(answerSet)
                 .hasSize(3);
+    }
+
+    @DisplayName("볼 카운트 기능을 확인한다.")
+    @Test
+    void countBallsTest() {
+        List<Integer> playNumbers = Arrays.asList(6, 4, 1);
+        List<Integer> answerNumbers = Arrays.asList(1, 4, 6);
+        Computer computer = new Computer(answerNumbers);
+
+        assertThat(computer.countBalls(playNumbers))
+                .isEqualTo(2);
     }
 
 }
