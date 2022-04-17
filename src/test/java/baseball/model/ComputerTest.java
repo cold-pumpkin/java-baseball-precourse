@@ -13,7 +13,7 @@ class ComputerTest {
     @BeforeEach
     void setUp() {
         computer = new Computer();
-        computer.generateAnswerNumbers();
+        computer.init();
     }
 
     @DisplayName("세자리의 정답 숫자가 정상적으로 생성되었는지 확인한다.")

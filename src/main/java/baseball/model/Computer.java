@@ -18,9 +18,13 @@ public class Computer {
         this.answerNumbers = answerNumbers;
     }
 
-    // TODO: 정답 숫자 생성 기능 구현
-    public void generateAnswerNumbers() {
+    public void init() {
         answerNumbers = new ArrayList<>();
+        generateAnswerNumbers();
+    }
+
+    // TODO: 정답 숫자 생성 기능 구현
+    private void generateAnswerNumbers() {
         while (answerNumbers.size() < NUMBER_OF_DIGITS) {
             int number = pickNumberInRange(MIN_NUMBER, MAX_NUMBER);
             addUniqueNumber(number);
