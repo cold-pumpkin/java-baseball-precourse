@@ -42,6 +42,16 @@ public class Computer {
     }
 
     // TODO: 결과 판단(스트라이크 카운트) 기능 구현
+    public int countStrikes(List<Integer> playerNumbers) {
+        int strikes = 0;
+        for (int i = 0; i < NUMBER_OF_DIGITS; i++) {
+            int playerNumber = playerNumbers.get(i);
+            if (playerNumber == answerNumbers.get(i)) {
+                strikes++;
+            }
+        }
+        return strikes;
+    }
 
     // ** Getter
     public List<Integer> getAnswerNumbers() {
