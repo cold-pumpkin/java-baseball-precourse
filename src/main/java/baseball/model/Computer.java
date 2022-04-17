@@ -23,9 +23,13 @@ public class Computer {
         answerNumbers = new ArrayList<>();
         while (answerNumbers.size() < NUMBER_OF_DIGITS) {
             int number = pickNumberInRange(MIN_NUMBER, MAX_NUMBER);
-            if (!answerNumbers.contains(number))
-                answerNumbers.add(number);
+            addUniqueNumber(number);
         }
+    }
+
+    public void addUniqueNumber(int number) {
+        if (!answerNumbers.contains(number))
+            answerNumbers.add(number);
     }
 
     // TODO: 결과 판단(볼 카운트) 기능 구현
@@ -40,6 +44,7 @@ public class Computer {
         }
         return balls;
     }
+
 
     // TODO: 결과 판단(스트라이크 카운트) 기능 구현
     public int countStrikes(List<Integer> playerNumbers) {
