@@ -33,7 +33,16 @@ class ValidatorTest {
         assertThatThrownBy(() -> {
             validateInputDuplicate("166");
         }).isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("숫자는 중복일 수 없습니다.");
+                .hasMessage("숫자는 중복일 수 없습니다!");
+    }
+
+    @Test
+    @DisplayName("입력값이 유효한 범위를 넘어서면 IllegalArgumentException을 발생시킨다.")
+    void validateInputRangeTest() {
+        assertThatThrownBy(() -> {
+            validateInputRange("106");
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("숫자는 1 이상 9 이하 범위 내에서 입력해주세요!");
     }
 
 }

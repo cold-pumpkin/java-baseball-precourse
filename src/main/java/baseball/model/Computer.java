@@ -7,9 +7,9 @@ import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class Computer {
 
-    private static final int NUMBER_OF_DIGITS = 3;
-    private static final int MIN_NUMBER = 1;
-    private static final int MAX_NUMBER = 9;
+    public static final int NUMBER_OF_DIGITS = 3;
+    public static final int MIN_NUMBER = 1;
+    public static final int MAX_NUMBER = 9;
     private List<Integer> answerNumbers;
 
     Computer(){};
