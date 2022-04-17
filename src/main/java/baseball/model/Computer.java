@@ -36,26 +36,33 @@ public class Computer {
     public int countBalls(List<Integer> playerNumbers) {
         int balls = 0;
         for (int i = 0; i < NUMBER_OF_DIGITS; i++) {
-            int playerNumber = playerNumbers.get(i);
-            if (answerNumbers.contains(playerNumber)
-                    && answerNumbers.get(i) != playerNumber) {
-                balls++;
-            }
+            balls += addBallByCondition(answerNumbers.get(i), playerNumbers.get(i));
         }
         return balls;
     }
 
+    private int addBallByCondition(int answerNumber, int playerNumber) {
+        if (answerNumber != playerNumber
+                && answerNumbers.contains(playerNumber)) {
+            return 1;
+        }
+        return 0;
+    }
 
     // TODO: 결과 판단(스트라이크 카운트) 기능 구현
     public int countStrikes(List<Integer> playerNumbers) {
         int strikes = 0;
         for (int i = 0; i < NUMBER_OF_DIGITS; i++) {
-            int playerNumber = playerNumbers.get(i);
-            if (playerNumber == answerNumbers.get(i)) {
-                strikes++;
-            }
+            strikes += addStrikeByCondition(answerNumbers.get(i), playerNumbers.get(i));
         }
         return strikes;
+    }
+
+    private int addStrikeByCondition(int answerNumber, int playerNumber) {
+        if (answerNumber == playerNumber) {
+            return 1;
+        }
+        return 0;
     }
 
     // ** Getter
