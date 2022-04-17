@@ -2,6 +2,9 @@ package baseball.model;
 
 import org.junit.jupiter.api.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ComputerTest {
@@ -23,4 +26,13 @@ class ComputerTest {
                 .hasSize(3)
                 .doesNotContain(0);
     }
+
+    @DisplayName("정답 숫자에 중복이 없는지 확인한다.")
+    @Test
+    void answerNumberDuplicateTest() {
+        Set<Integer> answerSet = new HashSet<>(computer.getAnswerNumbers());
+        assertThat(answerSet)
+                .hasSize(3);
+    }
+
 }
