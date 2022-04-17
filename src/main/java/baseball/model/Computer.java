@@ -27,7 +27,7 @@ public class Computer {
         }
     }
 
-    public void addUniqueNumber(int number) {
+    private void addUniqueNumber(int number) {
         if (!answerNumbers.contains(number))
             answerNumbers.add(number);
     }
