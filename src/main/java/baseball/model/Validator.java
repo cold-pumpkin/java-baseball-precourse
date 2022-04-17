@@ -3,7 +3,7 @@ package baseball.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import static baseball.model.Computer.NUMBER_OF_DIGITS;
+import static baseball.model.Computer.*;
 
 public class Validator {
 
@@ -30,7 +30,20 @@ public class Validator {
             inputMap.put(ch, true);
         }
         if (inputMap.size() != NUMBER_OF_DIGITS) {
-            throw new IllegalArgumentException("숫자는 중복일 수 없습니다.");
+            throw new IllegalArgumentException("숫자는 중복일 수 없습니다!");
+        }
+    }
+
+    public static void validateInputRange(String input) {
+        for (String s : input.split("")) {
+            checkRange(Integer.parseInt(s));
+        }
+    }
+
+    private static void checkRange(int number) {
+        if (number < MIN_NUMBER || number > MAX_NUMBER) {
+            String message = String.format("숫자는 %d 이상 %d 이하 범위 내에서 입력해주세요!", MIN_NUMBER, MAX_NUMBER);
+            throw new IllegalArgumentException(message);
         }
     }
 
