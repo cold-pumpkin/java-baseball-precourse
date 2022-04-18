@@ -40,6 +40,12 @@ public class Validator {
         }
     }
 
+    public static void validateInputYn(String input) {
+        if (!input.equals("1") && !input.equals("2")) {
+            throw new IllegalArgumentException("1 또는 2를 입력해주세요!");
+        }
+    }
+
     private static void checkRange(int number) {
         if (number < MIN_NUMBER || number > MAX_NUMBER) {
             String message = String.format("숫자는 %d 이상 %d 이하 범위 내에서 입력해주세요!", MIN_NUMBER, MAX_NUMBER);
