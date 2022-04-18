@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static baseball.model.constant.Constraint.NUMBER_OF_DIGITS;
 import static baseball.model.Validator.*;
+import static org.assertj.core.api.Assertions.assertThatNoException;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ValidatorTest {
@@ -43,6 +44,20 @@ class ValidatorTest {
             validateInputRange("106");
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("숫자는 1 이상 9 이하 범위 내에서 입력해주세요!");
+    }
+
+    @Test
+    @DisplayName("입력값이 1 또는 2가 아니면 IllegalArgumentException을 발생시킨다.")
+    void validateInputYnTest() {
+        assertThatNoException()
+                .isThrownBy(() -> validateInputYn("1"));
+        assertThatNoException()
+                .isThrownBy(() -> validateInputYn("2"));
+
+        assertThatThrownBy(() -> {
+            validateInputYn("3");
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("1 또는 2를 입력해주세요!");
     }
 
 }
