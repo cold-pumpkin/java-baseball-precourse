@@ -3,7 +3,7 @@ package baseball.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import static baseball.model.Computer.*;
+import static baseball.model.constant.Constraint.*;
 
 public class Validator {
 
@@ -41,8 +41,9 @@ public class Validator {
     }
 
     public static void validateInputYn(String input) {
-        if (!input.equals("1") && !input.equals("2")) {
-            throw new IllegalArgumentException("1 또는 2를 입력해주세요!");
+        if (!input.equals(YES) && !input.equals(NO)) {
+            String message = String.format("%s 또는 %s를 입력해주세요!", YES, NO);
+            throw new IllegalArgumentException(message);
         }
     }
 

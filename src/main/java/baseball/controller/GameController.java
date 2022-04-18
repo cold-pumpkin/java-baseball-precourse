@@ -3,6 +3,7 @@ package baseball.controller;
 import baseball.model.Game;
 
 import static baseball.model.InputReceiver.getRestartYn;
+import static baseball.model.constant.Constraint.YES;
 import static baseball.view.ControllerMessageViewer.showRestartGuideMessage;
 
 public class GameController {
@@ -19,7 +20,7 @@ public class GameController {
     }
 
     private boolean isRestart() {
-        return "1".equals(getRestartYn());
+        return YES.equals(getRestartYn());
     }
 
 }

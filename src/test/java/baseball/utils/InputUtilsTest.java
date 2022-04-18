@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static baseball.model.Computer.*;
+import static baseball.model.constant.Constraint.*;
 import static baseball.utils.InputUtils.convertToIntegerList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

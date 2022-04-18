@@ -2,7 +2,7 @@ package baseball.model;
 
 import java.util.List;
 
-import static baseball.model.Computer.NUMBER_OF_DIGITS;
+import static baseball.model.constant.Constraint.NUMBER_OF_DIGITS;
 import static baseball.model.InputReceiver.getInputNumbers;
 import static baseball.view.GameMessageViewer.*;
 

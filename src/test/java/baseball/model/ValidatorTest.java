@@ -3,7 +3,7 @@ package baseball.model;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static baseball.model.Computer.NUMBER_OF_DIGITS;
+import static baseball.model.constant.Constraint.NUMBER_OF_DIGITS;
 import static baseball.model.Validator.*;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
