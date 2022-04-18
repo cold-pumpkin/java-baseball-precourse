@@ -3,9 +3,6 @@ package baseball.utils;
 import java.util.ArrayList;
 import java.util.List;
 
-import static baseball.model.Validator.*;
-import static camp.nextstep.edu.missionutils.Console.readLine;
-
 public class InputUtils {
 
     private InputUtils() {}
