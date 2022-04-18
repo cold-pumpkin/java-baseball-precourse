@@ -18,6 +18,11 @@ public class GameMessageViewer {
             System.out.println("낫싱");
             return;
         }
+
+        System.out.println(buildHintMessage(balls, strikes));
+    }
+
+    private static String buildHintMessage(int balls, int strikes) {
         StringBuilder hintMessage = new StringBuilder();
         if (balls > 0) {
             hintMessage.append(balls).append("볼 ");
@@ -25,7 +30,7 @@ public class GameMessageViewer {
         if (strikes > 0) {
             hintMessage.append(strikes).append("스트라이크");
         }
-        System.out.println(hintMessage.toString().trim());
+        return hintMessage.toString().trim();
     }
 
 }

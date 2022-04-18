@@ -25,11 +25,9 @@ public class Game {
     }
 
     public void play() {
-        List<Integer> playerNumbers;
         while (!isAllStrike()) {
             showInputGuideMessage();
-            playerNumbers = getInputNumbers();
-
+            List<Integer> playerNumbers = getInputNumbers();
             balls = computer.countBalls(playerNumbers);
             strikes = computer.countStrikes(playerNumbers);
 
