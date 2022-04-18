@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static baseball.model.Computer.*;
-import static baseball.model.Validator.validateInputType;
-import static baseball.utils.InputConverter.convertToIntegerList;
+import static baseball.utils.InputUtils.convertToIntegerList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-class InputConverterTest {
+class InputUtilsTest {
 
     @Test
     @DisplayName("입력 문자열을 잘라 Integer 리스트로 변환한다.")

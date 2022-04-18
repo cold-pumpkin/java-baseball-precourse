@@ -3,9 +3,12 @@ package baseball.utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InputConverter {
+import static baseball.model.Validator.*;
+import static camp.nextstep.edu.missionutils.Console.readLine;
 
-    private InputConverter() {}
+public class InputUtils {
+
+    private InputUtils() {}
 
     public static List<Integer> convertToIntegerList(String input) {
         List<Integer> numberList = new ArrayList<>();
