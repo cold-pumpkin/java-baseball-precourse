@@ -1,12 +1,22 @@
 package baseball.model;
 
-import static baseball.model.Validator.*;
+import java.util.List;
+
+import static baseball.model.Computer.NUMBER_OF_DIGITS;
+import static baseball.model.InputReceiver.getInputNumbers;
+import static baseball.view.GameMessageViewer.*;
 
 public class Game {
 
     private int balls;
     private int strikes;
-    private Computer computer;
+    private final Computer computer;
+
+    public Game () {
+        this.balls = 0;
+        this.strikes = 0;
+        this.computer = new Computer();
+    }
 
     public void init() {
         balls = 0;
@@ -14,15 +24,22 @@ public class Game {
         computer.init();
     }
 
-    // TODO: 숫자 입력 안내 기능 구현
+    public void play() {
+        List<Integer> playerNumbers;
+        while (!isAllStrike()) {
+            showInputGuideMessage();
+            playerNumbers = getInputNumbers();
 
-    // TODO: 입력값 체크 기능 구현
-    private void validatePlayerInput(String playerInput) {
-        validateInputType(playerInput);
-        validateInputSize(playerInput);
-        validateInputDuplicate(playerInput);
-        validateInputRange(playerInput);
+            balls = computer.countBalls(playerNumbers);
+            strikes = computer.countStrikes(playerNumbers);
+
+            showHintMessage(balls, strikes);
+        }
+        showSuccessMessage();
     }
 
-    // TODO: 결과 메시지 출력 기능 구현
+    private boolean isAllStrike() {
+        return strikes >= NUMBER_OF_DIGITS;
+    }
+
 }
